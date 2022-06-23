@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
     int poradie = 1;
     int opt;
     char* optstring = ":w:i:n:e:t:p:W";
+    
+    //zistia sa zapnute spinace
     while ((opt = getopt(argc, argv, optstring)) != -1) {
         switch (opt) {
             case 'w':
@@ -77,6 +79,8 @@ int main(int argc, char *argv[])
 
         }
     }
+    
+    //chybove situacie
     if(np==1 && ep==0 || np==0 && ep==1){
         return 3;
     }
@@ -95,6 +99,8 @@ int main(int argc, char *argv[])
         }
     } 
     
+    
+    //program podla zapnuteho spinaca alebo kombinacie zapnutych spinacov vykona vypis 
     if(Wp==1){   //W prepinac    
         if(wp==1){  //prepinac na mesto
                 for(int i=0;i<DB_NUM;i++){
